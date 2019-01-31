@@ -13,13 +13,52 @@
 
 # Подсказка: воспользоваться методом .format()
 
+# Думаю я правильно понял задание и ввод фруктов осуществляется не пользователем, и функции input() нету вообще
 
-# Задача-2:
+fruits_list = ["фрукт 1", "фрукт 2", "фрукт 3", "фрукт 4", "фрукт 5", "Да, никакой фантазии"]
+i = 1
+while i < len(fruits_list) + 1:
+    print(f"{i}." + '{:>25}'.format(fruits_list[i - 1]))
+    i += 1
+print(" ")
+
+# Задача-2
 # Даны два произвольные списка.
 # Удалите из первого списка элементы, присутствующие во втором списке.
 
+print("Задача 2")
+print("Составте первый список")
+print("Введите через пробел все что угодно и введите enter")
+input1 = input()
+list1 = input1.split(' ')
+print(f"Первый список: {list1} \n\r")
+print("Введите второй список, так же через пробел")
+input2 = input()
+list2 = input2.split(' ')
+print(f"Второй список: {list2} \n\r")
+print("Удаляю из првого списка, элементы, присутствующиево втором")
+list1_set = set(list1)
+list2_set = set(list2)
+list1_set.difference_update(list2_set)
+print(f"Теперь первый список выглядит так: {list1_set}")
+
+print("Второе решение")
+print(f"Теперь первый список выглядит так: {set(list1).difference(set(list2))}")
 
 # Задача-3:
 # Дан произвольный список из целых чисел.
 # Получите НОВЫЙ список из элементов исходного, выполнив следующие условия:
 # если элемент кратен двум, то разделить его на 4, если не кратен, то умножить на два.
+
+
+print("\n\rЗадача 2")
+print("Введите через пробел числа")
+numbers_str_list = input().split(' ')
+numbers_int_list = [int(number) for number in numbers_str_list]
+edited_list = []
+for number in numbers_int_list:
+    if number%2 ==0:
+        edited_list.append(number/4)
+    else:
+        edited_list.append(number*2)
+print(edited_list)
